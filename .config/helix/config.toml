@@ -1,0 +1,107 @@
+theme = "monokai_aqua"
+
+[editor]
+# Show currently open buffers, only when more than one exists.
+bufferline = "multiple"
+# Highlight all lines with a cursor
+cursorline = false
+# Use relative line numbers
+line-number = "relative"
+# Force the theme to show colors
+true-color = true
+# Minimum severity to show a diagnostic after the end of a line:
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true
+# wrap-at-text-width = true
+wrap-indicator = "↩ "
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+
+[editor.whitespace.characters]
+space = " "
+nbsp = "⍽"    # Non Breaking SPace
+tab = "→"
+newline = "⏎"
+tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
+
+[editor.lsp]
+# Disable automatically popups of signature parameter help
+auto-signature-help = false
+# Show LSP messages in the status line
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["file-name", "version-control"]
+right = ["diagnostics", "position-percentage"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "error"   # Show inline diagnostics when the cursor is on the line
+other-lines = "disable" # Don't expand diagnostics unless the cursor is on the line
+
+[keys.select]
+X = "select_line_above"
+
+[keys.normal]
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+"C-S-esc" = "extend_line" # Maps Ctrl-Shift-Escape to extend_line
+g = { a = "code_action" } # Maps `ga` to show possible code actions
+"ret" = [
+  "open_below",
+  "normal_mode",
+] # Maps the enter key to open_below then re-enter normal mode
+"0" = "extend_to_line_start"
+"C-0" = "extend_to_line_end"
+space.c = "toggle_comments"
+# https://elixirforum.com/t/helix-editor-for-elixir-development/54964/27
+X = "extend_line_above" # Shift+x to select the whole line above
+D = [
+  "extend_to_line_end",
+  "change_selection",
+] # Wipe and edit the current line from cursor position
+# c = ["trim_selections", "change_selection"] # Make 'c' automatically strip the selection of extra whitespace
+# a = ["append_mode", "collapse_selection"] # Remove the selection when entering insert mode with 'a'
+"tab" = "goto_next_function"   # Select and jump to the next function via Treesitter
+"S-tab" = "goto_prev_function" # Select and jump to the previous function via Treesitter 
+
+# Use system clipboard
+p = "paste_clipboard_before"
+y = "yank_main_selection_to_clipboard"
+
+# https://github.com/helix-editor/helix/discussions/7908
+space.x = ":toggle whitespace.render all none"
+
+# Mark line and move with them up/down
+# https://github.com/helix-editor/helix/discussions/5764#discussioncomment-4840408
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+]
+
+[keys.insert]
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
