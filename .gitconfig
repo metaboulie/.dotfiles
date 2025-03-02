@@ -1,0 +1,25 @@
+[gttp]
+	sslVerify = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+  name = metaboulie
+  email = eugeneheiner14@gmail.com
+  ; email = heinereugene@pm.me
+[core]
+  editor = nvim
+[init]
+  defaultBranch = main
+  default = branch
+[color]
+  ui = auto
+[alias]
+  br-desc = "!git branch | sed 's/^[* ] //' | while read branch; do \
+    echo -n \"$branch \"; \
+    git config branch.\"$branch\".description 2>/dev/null || echo; \
+    done"
+[github]
+  user = metaboulie
