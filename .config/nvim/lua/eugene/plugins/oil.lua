@@ -18,15 +18,14 @@ return {
 				-- Set to true to watch the filesystem for changes and reload oil
 				watch_for_changes = true,
 				keymaps = {
+					["<C-h>"] = false,
+					["<C-l>"] = false,
 					["g?"] = { "actions.show_help", mode = "n" },
 					["<CR>"] = "actions.select",
 					["<C-s>"] = { "actions.select", opts = { vertical = true } },
-					-- ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
-					["<C-h"] = false,
 					["<C-t>"] = { "actions.select", opts = { tab = true } },
 					["<C-p>"] = "actions.preview",
 					["<C-c>"] = { "actions.close", mode = "n" },
-					["<C-l>"] = false,
 					["-"] = { "actions.parent", mode = "n" },
 					["_"] = { "actions.open_cwd", mode = "n" },
 					["`"] = { "actions.cd", mode = "n" },
