@@ -63,6 +63,7 @@ alias sf 'source ~/.config/fish/config.fish'
 # neovim
 alias nn 'z ~/.config/nvim/; nvim .'
 alias v 'nvim'
+alias vl 'nvim ~/.local/state/nvim/lsp.log'
 
 # brew
 alias bi 'brew info'
