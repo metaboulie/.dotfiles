@@ -21,5 +21,9 @@
     echo -n \"$branch \"; \
     git config branch.\"$branch\".description 2>/dev/null || echo; \
     done"
+	sweep = !git fetch -p && git branch -vv | awk \"/: gone]/ {print \\$1}\" | xargs -r git branch -D
 [github]
   user = metaboulie
+[fetch]
+	prune = true
+	pruneTags = true
