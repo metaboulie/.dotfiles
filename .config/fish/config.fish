@@ -71,6 +71,7 @@ alias bh 'brew home'
 alias bl 'brew list'
 alias bd 'brew doctor'
 alias bc 'brew cleanup'
+alias bu 'brew uses --recursive --installed'
 
 # git
 alias gs 'git switch'
