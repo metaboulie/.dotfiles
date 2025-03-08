@@ -5,7 +5,8 @@
     "timezones": [
         // Timezones have a name (Name) and timezone code (TZ)
         { "Name": "Office", "TZ": "America/New_York" },
-        { "Name": "Home", "TZ": "Europe/Berlin" }
+        { "Name": "Home", "TZ": "Europe/Berlin" },
+        { "Name": "Homie P", "TZ": "Europe/London" }
     ],
     // Configures the style of the plot
     "style": {
