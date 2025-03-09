@@ -86,7 +86,7 @@ alias gl 'git ls-remote'
 alias gbe 'git branch --edit-description'
 
 # marimo
-alias me 'uv run marimo edit'
+alias me 'uv run marimo edit --no-token'
 alias md 'uv run marimo -d edit --no-token --headless'
 
 # uv
