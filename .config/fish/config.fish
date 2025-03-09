@@ -11,12 +11,6 @@ set -gx VISUAL nvim
 # rust
 set -gx PATH $HOME/.cargo/bin $PATH
 
-# pnpm
-set -gx PNPM_HOME "/Users/chanhuizhihou/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-
 # node
 function nvm
   bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
