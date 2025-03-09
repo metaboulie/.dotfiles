@@ -1,8 +1,12 @@
 using Pkg
-Pkg.precompile()
+Pkg.activate(".")
+Pkg.instantiate()
+ENV["JULIA_EDITOR"] = "nvim"
+
+Pkg.precompile(; timing=true)
 
 #=
-Using Revise.jl
+Revise.jl: Automatically update function definitions in a running Julia session 
 - https://timholy.github.io/Revise.jl/stable/config/
 =#
 try
@@ -13,7 +17,7 @@ try
     using JET
     using Pluto
 catch e
-    @warn "Error initializing Revise" exception = (e, catch_backtrace())
+    @warn "Startup error" exception = (e, catch_backtrace())
 end
 
 #=
