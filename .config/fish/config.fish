@@ -46,9 +46,6 @@ alias bt "btop -t -lc"
 alias c 'clear'
 alias a "open -a 'Arc'"
 alias credit 'z ~/metaboulie; v credits.txt'
-
-# lazygit
-alias l 'lazygit'
 alias s 'source .venv/bin/activate.fish'
 
 # update package managers
