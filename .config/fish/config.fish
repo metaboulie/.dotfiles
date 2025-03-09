@@ -8,10 +8,6 @@ fish_add_path $HOME/.ghcup/bin
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
 # rust
 set -gx PATH $HOME/.cargo/bin $PATH
 
