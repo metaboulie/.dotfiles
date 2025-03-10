@@ -1,14 +1,11 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
--- set leader key to space
+-- Set up both the traditional leader (for keymaps) as well as the local leader (for norg files)
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 local keymap = vim.keymap -- for conciseness
-
----------------------
--- General Keymaps -------------------
-keymap.set("n", "<space><space>x", ":source $HOME/.config/nvim/init.lua <CR>")
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })

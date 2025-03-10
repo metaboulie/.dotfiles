@@ -9,8 +9,6 @@ return {
 		-- import comment plugin safely
 		local comment = require("Comment")
 
-		local ts_context_commentstring = require("ts_context_commentstring.integrations.comment_nvim")
-
 		-- enable comment
 		comment.setup({
 			---Add a space b/w comment and the line
@@ -18,7 +16,7 @@ return {
 			---Whether the cursor should stay at its position
 			sticky = true,
 			---Lines to be ignored while (un)comment
-			ignore = nil,
+			ignore = "",
 			---LHS of toggle mappings in NORMAL mode
 			toggler = {
 				---Line-comment toggle keymap
