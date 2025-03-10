@@ -12,10 +12,12 @@ return {
 		-- configure treesitter
 		treesitter.setup({ -- enable syntax highlighting
 			auto_install = true,
+			-- Install parsers synchronously (only applied to `ensure_installed`)
+			sync_install = false,
 			highlight = {
 				enable = true,
 			},
-			ensure_installed = {},
+			ensure_installed = { "rust", "haskell", "lua", "python", "julia", "go" },
 			ignore_install = {
 				"org",
 			},
@@ -35,6 +37,7 @@ return {
 					node_decremental = "<bs>",
 				},
 			},
+			modules = {},
 		})
 	end,
 }
