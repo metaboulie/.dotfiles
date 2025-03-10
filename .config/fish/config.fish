@@ -18,7 +18,6 @@ end
 
 # zoxide
 zoxide init fish | source
-alias cd 'z'
 
 # fzf
 fzf --fish | source
@@ -36,7 +35,6 @@ alias bt "btop -t -lc"
 alias c 'clear'
 alias a "open -a 'Arc'"
 alias credit 'z ~/metaboulie; v credits.txt'
-alias s 'source .venv/bin/activate.fish'
 
 # update package managers
 alias u 'brew upgrade; rustup update; uv tool upgrade ruff marimo motheme; brew autoremove; brew cleanup'
@@ -64,7 +62,7 @@ alias bu 'brew uses --recursive --installed'
 # git
 alias gs 'git switch'
 alias gsm 'git switch main'
-alias gsd 'git switch develop'
+alias gsd 'git switch dev'
 alias gc 'git clone --depth=1'
 alias gf 'git fetch --prune'
 alias gm 'git merge --no-ff'
@@ -84,6 +82,7 @@ alias ue 'uv pip install -e .'
 # ruff
 alias rc 'ruff check'
 alias rf 'ruff format'
+alias r 'ruff format; ruff check'
 
 # bat
 function help -d 'print help message'
