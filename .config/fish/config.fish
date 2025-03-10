@@ -43,7 +43,6 @@ alias u 'brew upgrade; rustup update; uv tool upgrade ruff marimo motheme; brew 
 
 # fish
 alias nf 'nvim ~/.config/fish/config.fish'
-alias vf 'nvim ~/.config/fish/config.fish'
 alias ng 'nvim ~/.gitconfig'
 alias sf 'source ~/.config/fish/config.fish'
 
@@ -51,6 +50,8 @@ alias sf 'source ~/.config/fish/config.fish'
 alias nn 'z ~/.config/nvim/; nvim .'
 alias v 'nvim'
 alias vl 'nvim ~/.local/state/nvim/lsp.log'
+alias nc 'z ~/.config; nvim .'
+alias n 'z ~/metaboulie; nvim todo.norg'
 
 # brew
 alias bi 'brew info'
