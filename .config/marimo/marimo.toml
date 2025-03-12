@@ -1,18 +1,24 @@
+[runtime]
+output_max_bytes = 8000000
+auto_instantiate = true
+std_stream_max_bytes = 1000000
+on_cell_change = "autorun"
+watcher_on_save = "lazy"
+pythonpath = []
+auto_reload = "off"
+
 [server]
 browser = "default"
 follow_symlink = false
 
-[runtime]
-auto_instantiate = true
-output_max_bytes = 8000000
-watcher_on_save = "lazy"
-on_cell_change = "autorun"
-pythonpath = []
-auto_reload = "off"
-std_stream_max_bytes = 1000000
+[save]
+format_on_save = true
+autosave = "after_delay"
+autosave_delay = 1000
 
 [keymap]
 preset = "vim"
+
 [keymap.overrides]
 "cell.focusUp" = "Ctrl-Shift-k"
 "cell.focusDown" = "Ctrl-Shift-j"
@@ -22,46 +28,41 @@ preset = "vim"
 "cell.createBelow" = "Ctrl-Shift-p"
 "cell.createAbove" = "Ctrl-Shift-o"
 
-[formatting]
-line_length = 79
+[package_management]
+manager = "uv"
+add_script_metadata = true
+
+[display]
+code_editor_font_size = 14
+theme = "light"
+default_width = "compact"
+dataframes = "rich"
+cell_output = "above"
+
+[experimental]
+rtc = false
+chat_sidebar = true
+tracing = true
+multi_column = true
 
 [snippets]
 include_default_snippets = true
 custom_paths = []
 
-[display]
-theme = "dark"
-cell_output = "above"
-code_editor_font_size = 14
-default_width = "compact"
-dataframes = "rich"
-
-[experimental]
-rtc = false
-multi_column = true
-chat_sidebar = true
-tracing = true
-
-[ai]
-rules = "- prefer polars over pandas\n- make charts using altair"
-[ai.google]
-
-[ai.open_ai]
-api_key = "ollama"
-model = "qwen2.5:0.5b"
-base_url = "http://127.0.0.1:11434/v1"
-
-[ai.anthropic]
-
-[package_management]
-add_script_metadata = true
-manager = "uv"
-
 [completion]
 copilot = false
 activate_on_typing = true
 
-[save]
-autosave = "after_delay"
-autosave_delay = 1000
-format_on_save = true
+[ai]
+rules = "- prefer polars over pandas\n- make charts using altair"
+[ai.anthropic]
+
+[ai.google]
+
+[ai.open_ai]
+model = "qwen2.5:0.5b"
+api_key = "ollama"
+base_url = "http://127.0.0.1:11434/v1"
+
+[formatting]
+line_length = 79
