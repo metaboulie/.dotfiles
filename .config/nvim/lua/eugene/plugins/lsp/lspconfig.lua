@@ -113,6 +113,20 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["crystalline"] = function()
+				lspconfig["crystalline"].setup({
+					cmd = { "crystalline" },
+					filetypes = { "crystal" },
+					arg = { "--stdio" },
+					root_markers = { "shard.yml" },
+					settings = {
+						crystal = {
+							command = "crystal",
+							diagnosticsMode = "on",
+						},
+					},
+				})
+			end,
 			["lua_ls"] = function()
 				lspconfig["lua_ls"].setup({
 					-- Command and arguments to start the server.
