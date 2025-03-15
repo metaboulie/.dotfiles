@@ -29,8 +29,6 @@ exclude = [
   "site-packages",
   "venv",
 ]
-# Extend the `pyproject.toml` file in the parent directory.
-extend = "../pyproject.toml"
 # By default, Ruff will discover files matching *.py, *.pyi, *.ipynb, or pyproject.toml.
 include = ["*.py", "pyproject.toml"]
 extend-include = []
@@ -112,9 +110,13 @@ extend-select = [
   "TRY",    # https://docs.astral.sh/ruff/rules/#tryceratops-try
 ]
 ignore = [
-  "D107", # Checks for public __init__ method definitions that are missing docstrings.
-  "D203", # Checks for docstrings on class definitions that are not preceded by a blank line.
-  "D212", # Checks for docstring summary lines that are not positioned on the first physical line of the docstring.
+  "D107",   # Checks for public __init__ method definitions that are missing docstrings.
+  "D203",   # Checks for docstrings on class definitions that are not preceded by a blank line.
+  "D212",   # Checks for docstring summary lines that are not positioned on the first physical line of the docstring.
+  "E501",   # Checks for lines that exceed the specified maximum character length.
+  "E731",   # Checks for lambda expressions which are assigned to a variable.
+  "COM812", # Checks for the absence of trailing commas.
+  "G004",   # Checks for uses of f-strings to format logging messages.
 ]
 
 # Allow fix for all enabled rules (when `--fix`) is provided.
