@@ -17,7 +17,7 @@ return {
 			highlight = {
 				enable = true,
 			},
-			ensure_installed = { "rust", "haskell", "lua", "python", "julia", "go" },
+			ensure_installed = { "rust", "haskell", "lua", "python", "julia", "nim", "c" },
 			ignore_install = {
 				"org",
 			},

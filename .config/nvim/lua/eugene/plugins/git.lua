@@ -14,7 +14,6 @@ return {
 			neogit.setup({ graph_style = "kitty" })
 
 			local keymap = vim.keymap
-
 			keymap.set("n", "<leader>ng", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
 			keymap.set("n", "<leader>nc", "<cmd>NeogitCommit<CR>", { desc = "Open Neogit Commit" })
 			keymap.set("n", "<leader>nl", "<cmd>NeogitLogCurrent<CR>", { desc = "Open Neogit log buffer" })

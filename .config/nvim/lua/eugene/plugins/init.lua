@@ -5,15 +5,13 @@ return {
 			require("better_escape").setup({
 				timeout = vim.o.timeoutlen,
 				default_mappings = true,
-        -- stylua: ignore
 				mappings = {
-					i = { j = { k = "<Esc>", j = "<Esc>", }, },
-					c = { j = { k = "<Esc>", j = "<Esc>", }, },
-					t = { j = { k = "<C-\\><C-n>", }, },
-					v = { j = { k = "<Esc>", }, },
-					s = { j = { k = "<Esc>", }, },
+					i = { j = { k = "<Esc>", j = "<Esc>" } },
+					c = { j = { k = "<Esc>", j = "<Esc>" } },
+					t = { j = { k = "<C-\\><C-n>" } },
+					v = { j = { k = "<Esc>" } },
+					s = { j = { k = "<Esc>" } },
 				},
-				-- stylua: enable
 			})
 		end,
 	},

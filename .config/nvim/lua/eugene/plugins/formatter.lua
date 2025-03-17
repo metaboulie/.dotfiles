@@ -14,11 +14,7 @@ return {
 				toml = { "taplo" },
 				haskell = { "fourmolu" },
 			},
-			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
-			},
+			format_on_save = { lsp_fallback = true, async = false, timeout_ms = 1000 },
 		})
 	end,
 }
