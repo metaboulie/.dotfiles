@@ -3,6 +3,7 @@
 --  For more options, you can see `:help option-list`
 
 vim.cmd("let g:netrw_liststyle = 3")
+vim.g.have_nerd_font = true
 
 local opt = vim.opt -- for conciseness
 

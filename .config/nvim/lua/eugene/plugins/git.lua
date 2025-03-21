@@ -2,15 +2,9 @@ return {
 	{
 		-- https://github.com/NeogitOrg/neogit
 		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- required
-			"sindrets/diffview.nvim", -- optional - Diff integration
-			-- Only one of these is needed.
-			"nvim-telescope/telescope.nvim", -- optional
-		},
+		dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim", "nvim-telescope/telescope.nvim" },
 		config = function()
 			local neogit = require("neogit")
-
 			neogit.setup({ graph_style = "kitty" })
 
 			local keymap = vim.keymap

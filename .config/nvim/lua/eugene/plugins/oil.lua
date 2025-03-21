@@ -9,7 +9,6 @@ return {
 
 				return "  " .. vim.fn.fnamemodify(path, ":.")
 			end
-
 			require("oil").setup({
 				columns = { "icon" },
 				delete_to_trash = true,
@@ -51,11 +50,8 @@ return {
 					return nil
 				end,
 			})
-
 			-- Open parent directory in current window
 			vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-			-- Open parent directory in floating window
-			vim.keymap.set("n", "<space>-", require("oil").toggle_float)
 		end,
 	},
 }
