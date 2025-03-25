@@ -113,6 +113,9 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["gleam"] = function()
+				lspconfig["gleam"].setup({})
+			end,
 			["lua_ls"] = function()
 				lspconfig["lua_ls"].setup({
 					-- Command and arguments to start the server.
