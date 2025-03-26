@@ -1,4 +1,5 @@
 return {
+	"wakatime/vim-wakatime",
 	{
 		"max397574/better-escape.nvim",
 		config = function()
