@@ -99,6 +99,20 @@ return {
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
+		require("lspconfig")["nextls"].setup({
+			capabilities = capabilities,
+			cmd = { "nextls", "--stdio" },
+			filetypes = { "elixir", "eelixir" },
+			init_options = {
+				extensions = {
+					credo = { enable = true },
+				},
+				experimental = {
+					completions = { enable = true },
+				},
+			},
+		})
+
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
 		for type, icon in pairs(signs) do

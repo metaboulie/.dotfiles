@@ -79,6 +79,8 @@ alias md 'uv run marimo -d edit --no-token --headless'
 # uv
 alias ue 'uv pip install -e .'
 
+# gh
+alias ghd "gh release download --clobber"
 
 # ruff
 alias rc 'ruff check'

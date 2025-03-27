@@ -9,7 +9,6 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				lua = { "stylua" },
-				python = { "ruff" },
 				rust = { "rustfmt" },
 				toml = { "taplo" },
 				haskell = { "fourmolu" },
