@@ -7,15 +7,9 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
-
-		-- import mason_lspconfig plugin
 		local mason_lspconfig = require("mason-lspconfig")
-
-		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
 		local keymap = vim.keymap -- for conciseness
 
 		vim.api.nvim_create_autocmd("LspAttach", {
@@ -24,8 +18,6 @@ return {
 				-- Buffer local mappings.
 				-- See `:help vim.lsp.*` for documentation on any of the below functions
 				local opts = { buffer = ev.buf, silent = true }
-
-				-- set keybinds
 				opts.desc = "Show LSP references"
 				keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
@@ -121,7 +113,6 @@ return {
 		end
 
 		mason_lspconfig.setup_handlers({
-			-- default handler for installed servers
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
@@ -129,14 +120,8 @@ return {
 			end,
 			["lua_ls"] = function()
 				lspconfig["lua_ls"].setup({
-					-- Command and arguments to start the server.
 					cmd = { "lua-language-server" },
-					-- Filetypes to automatically attach to.
 					filetypes = { "lua" },
-					-- Sets the "root directory	-- Sets the "root directory" to the parent directory of the file in the
-					-- current buffer that contains either a ".luarc.json" or a
-					-- ".luarc.jsonc" file. Files that share a root directory will reuse
-					-- the connection to the same LSP server.
 					root_markers = { ".luarc.json", ".luarc.jsonc" },
 					settings = {
 						Lua = {
