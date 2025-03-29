@@ -28,6 +28,7 @@ alias ls 'eza --all --header --icons --git --git-ignore --tree --long --git-repo
 alias lsa 'eza --all --header --icons --git --tree --long --git-repos-no-status --binary --total-size'
 alias lss 'eza'
 alias lsss 'eza -R -l -L 2'
+alias lsbin 'eza ~/opt/bin -l --no-permissions --no-user -U --no-filesize'
 
 # btop
 alias bt "btop -t -lc"

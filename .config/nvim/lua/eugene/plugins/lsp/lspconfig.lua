@@ -11,6 +11,7 @@ return {
 		local mason_lspconfig = require("mason-lspconfig")
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local keymap = vim.keymap -- for conciseness
+		local util = require("lspconfig.util")
 
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -91,7 +92,7 @@ return {
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		require("lspconfig")["nextls"].setup({
+		lspconfig["nextls"].setup({
 			capabilities = capabilities,
 			cmd = { "nextls", "--stdio" },
 			filetypes = { "elixir", "eelixir" },
@@ -103,6 +104,16 @@ return {
 					completions = { enable = true },
 				},
 			},
+		})
+		lspconfig["crystalline"].setup({
+			capabilities = capabilities,
+			cmd = { "crystalline" },
+			filetypes = { "crystal" },
+			root_dir = function(fname)
+				return util.root_pattern("shard.yml")(fname)
+					or vim.fs.dirname(vim.fs.find(".git", { path = fname, upward = true })[1])
+			end,
+			single_file_support = true,
 		})
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
