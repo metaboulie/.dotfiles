@@ -1,0 +1,39 @@
+mode = "local"
+project = ""
+shell = "fish"
+
+[dirs]
+project = []
+python = "isolated"
+data = "/Users/chanhuizhihou/Library/Application Support/hatch"
+cache = "/Users/chanhuizhihou/Library/Caches/hatch"
+
+[dirs.env]
+virtual = ".hatch"
+
+[projects]
+
+[publish.index]
+repo = "main"
+
+[template]
+name = "métaboulie"
+email = "metaboulie@pm.me"
+
+[template.licenses]
+headers = true
+default = ["MIT"]
+
+[template.plugins.default]
+tests = true
+ci = true
+src-layout = true
+
+[terminal.styles]
+info = "bold"
+success = "bold cyan"
+error = "bold red"
+warning = "bold yellow"
+waiting = "bold magenta"
+debug = "bold"
+spinner = "simpleDotsScrolling"

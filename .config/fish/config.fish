@@ -9,6 +9,8 @@ fish_add_path $HOME/opt/bin
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
+set -gx HATCH_CONFIG ~/.config/hatch.toml
+
 # rust
 set -gx PATH $HOME/.cargo/bin $PATH
 
