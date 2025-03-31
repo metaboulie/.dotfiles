@@ -8,7 +8,7 @@ vim.g.have_nerd_font = true
 local opt = vim.opt -- for conciseness
 
 -- line numbers
-opt.relativenumber = true -- show relative line numbers
+opt.relativenumber = false -- i think this can strengthen my computation power
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
