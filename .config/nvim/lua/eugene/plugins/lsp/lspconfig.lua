@@ -117,11 +117,20 @@ return {
 		})
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		vim.diagnostic.config({
+			underline = true,
+			virtual_text = true,
+			virtual_lines = true,
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "✘",
+					[vim.diagnostic.severity.WARN] = "▲",
+					[vim.diagnostic.severity.INFO] = "»",
+					[vim.diagnostic.severity.HINT] = "⚑",
+				},
+			},
+			severity_sort = true,
+		})
 
 		mason_lspconfig.setup_handlers({
 			function(server_name)
