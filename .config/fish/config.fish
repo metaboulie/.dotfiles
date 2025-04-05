@@ -39,9 +39,10 @@ alias bt "btop -t -lc"
 alias c 'clear'
 alias a "open -a 'Arc'"
 alias credit 'z ~/metaboulie; v credits.txt'
+alias clean 'brew autoremove; brew cleanup --prune=all'
 
 # update package managers
-alias u 'brew upgrade; rustup update; uv tool upgrade ruff marimo motheme; brew autoremove; brew cleanup'
+alias u 'brew upgrade; rustup update; uv tool upgrade --all'
 
 # fish
 alias nf 'nvim ~/.config/fish/config.fish'
