@@ -44,7 +44,6 @@ alias n 'z ~/metaboulie; nvim todo.norg'
 alias bi 'brew info'
 alias bh 'brew home'
 alias bl 'brew list'
-alias bd 'brew doctor'
 alias bu 'brew uses --recursive --installed'
 
 alias gs 'git switch'
@@ -52,17 +51,13 @@ alias gsm 'git switch main'
 alias gc 'git clone --depth=1'
 alias gf 'git fetch --prune'
 alias gm 'git merge --no-ff'
-alias gb 'git branch'
-alias gbd 'git branch -D'
-alias gl 'git ls-remote'
 alias gbe 'git branch --edit-description'
 
+alias ghd "gh release download --clobber --dir ~/opt"
+
 alias me 'uv run marimo edit --no-token'
-alias md 'uv run marimo -d edit --no-token --headless'
 
 alias ue 'uv pip install -e .'
-
-alias ghd "gh release download --clobber --dir ~/opt"
 
 alias rc 'ruff check'
 alias rf 'ruff format'
@@ -97,4 +92,10 @@ end
 
 function check -d 'print credential info in cwd'
   command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
+end
+
+function gi
+    echo '*' > .gitignore
+    eza -f | awk '{print "!" $0}' >> .gitignore
+    bat .gitignore
 end
