@@ -105,16 +105,6 @@ return {
 				},
 			},
 		})
-		lspconfig["crystalline"].setup({
-			capabilities = capabilities,
-			cmd = { "crystalline" },
-			filetypes = { "crystal" },
-			root_dir = function(fname)
-				return util.root_pattern("shard.yml")(fname)
-					or vim.fs.dirname(vim.fs.find(".git", { path = fname, upward = true })[1])
-			end,
-			single_file_support = true,
-		})
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		vim.diagnostic.config({
@@ -131,6 +121,7 @@ return {
 			severity_sort = true,
 		})
 
+		-- TODO: deprecate mason
 		mason_lspconfig.setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({

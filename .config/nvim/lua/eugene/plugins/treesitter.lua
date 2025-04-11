@@ -2,29 +2,17 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
-	dependencies = {
-		"windwp/nvim-ts-autotag",
-	},
+	dependencies = { "windwp/nvim-ts-autotag" },
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 		treesitter.setup({ -- enable syntax highlighting
 			auto_install = true,
-			-- Install parsers synchronously (only applied to `ensure_installed`)
 			sync_install = false,
-			highlight = {
-				enable = true,
-			},
+			highlight = { enable = true },
 			ensure_installed = { "rust", "haskell", "lua", "python", "julia", "nim", "c" },
-			ignore_install = {
-				"org",
-			},
-			-- enable indentation
+			ignore_install = { "org" },
 			indent = { enable = true },
-			-- enable autotagging (w/ nvim-ts-autotag plugin)
-			autotag = {
-				enable = true,
-			},
-			-- ensure these language parsers are installed
+			autotag = { enable = true },
 			incremental_selection = {
 				enable = true,
 				keymaps = {
