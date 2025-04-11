@@ -6,8 +6,7 @@ return {
 		local conform = require("conform")
 		conform.setup({
 			formatters_by_ft = {
-				json = { "prettier" },
-				yaml = { "prettier" },
+				yaml = { "yamlfmt" },
 				lua = { "stylua" },
 				rust = { "rustfmt" },
 				toml = { "taplo" },

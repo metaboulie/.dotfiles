@@ -96,6 +96,7 @@ end
 
 function gi
     echo '*' > .gitignore
+    echo '!.gitignore' >> .gitignore
     eza -f | awk '{print "!" $0}' >> .gitignore
     bat .gitignore
 end
