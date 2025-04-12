@@ -87,7 +87,7 @@ function y -d 'open yazi'
 end
 
 function hg -d 'prettier regex search'
-  command hgrep --no-grid --printer bat -S "$argv" | less -R
+  command hgrep --no-grid --printer bat -S "$argv" 
 end
 
 function check -d 'print credential info in cwd'
