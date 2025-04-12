@@ -19,7 +19,7 @@ set -gx MANROFFOPT "-c"
 set -gx HATCH_CONFIG ~/.config/hatch.toml
 set -gx TAPLO_CONFIG ~/.config/taplo.toml
 
-######################################
+###
 ## ls
 # general ls
 alias ls 'eza --all --no-permissions --no-user --header --icons --git --git-ignore --tree --long --git-repos-no-status --binary --total-size'
@@ -126,4 +126,3 @@ end
 function check -d 'print credential info in cwd'
   command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
 end
-######################################
