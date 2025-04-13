@@ -6,9 +6,8 @@
 	process = git-lfs filter-process
 	required = true
 [user]
-  name = metaboulie
-  email = eugeneheiner14@gmail.com
-  ; email = heinereugene@pm.me
+  name = métaboulie
+  email = heinereugene@pm.me
 [core]
   editor = nvim
 [init]
@@ -16,14 +15,5 @@
   default = branch
 [color]
   ui = auto
-[alias]
-  br-desc = "!git branch | sed 's/^[* ] //' | while read branch; do \
-    echo -n \"$branch \"; \
-    git config branch.\"$branch\".description 2>/dev/null || echo; \
-    done"
-	sweep = !git fetch -p && git branch -vv | awk \"/: gone]/ {print \\$1}\" | xargs -r git branch -D
 [github]
   user = metaboulie
-[fetch]
-	prune = true
-	pruneTags = true

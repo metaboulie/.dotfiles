@@ -86,8 +86,6 @@ alias bu 'brew uses --recursive --installed'
 alias gc 'git clone --depth=1'
 # log
 alias gl 'git log --graph --decorate --oneline | bat --language=gitlog'
-# eait branch description
-alias gbe 'git branch --edit-description'
 # download github release
 alias ghd "gh release download --clobber --dir ~/opt"
 # initialize .gitignore
