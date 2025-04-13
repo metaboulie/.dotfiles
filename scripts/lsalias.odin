@@ -53,6 +53,7 @@ add_item :: proc(group: ^AliasGroup, item: AliasItem) {
 AliasView :: struct {
 	groups: []AliasGroup,
 	format: ViewFormat,
+	compact: bool,
 }
 
 print_grid :: proc(view: AliasView) {
@@ -63,7 +64,9 @@ print_grid :: proc(view: AliasView) {
 
 		if len(group.items) == 0 {
 			fmt.println("No items in this group")
-			fmt.println()
+			if !view.compact {
+				fmt.println()
+			}
 			continue
 		}
 
@@ -88,7 +91,9 @@ print_grid :: proc(view: AliasView) {
 			)
 		}
 
-		fmt.println() // Empty line between groups
+		if !view.compact {
+			fmt.println() // Empty line between groups
+		}
 	}
 }
 
@@ -118,7 +123,9 @@ print_inline :: proc(view: AliasView) {
 		}
 
 		fmt.println(strings.join(items_str[:], ", "))
-		fmt.println() // Empty line between groups
+		if !view.compact {
+			fmt.println() // Empty line between groups
+		}
 	}
 }
 
@@ -204,6 +211,7 @@ main :: proc() {
 
 	// Set default format
 	format := ViewFormat.Inline
+	compact := false
 
 	// Process command line arguments (simple version)
 	args := os.args[1:]
@@ -227,11 +235,16 @@ main :: proc() {
 				i += 2
 				continue
 			}
+		} else if args[i] == "--compact" {
+			compact = true
+			i += 1
+			continue
 		} else if args[i] == "-h" || args[i] == "--help" {
 			fmt.println("lsalias - List and display fish shell aliases in a colorful format")
 			fmt.println("Options:")
 			fmt.println("  -f, --file PATH   Path to fish config file (relative to HOME)")
 			fmt.println("  --format FORMAT   Display format for aliases (grid or inline)")
+			fmt.println("  --compact         Don't print empty lines between groups")
 			fmt.println("  -h, --help        Show this help message")
 			return
 		}
@@ -279,6 +292,7 @@ main :: proc() {
 	view := AliasView {
 		groups = groups[:],
 		format = format,
+		compact = compact,
 	}
 	pprint(view)
 }
