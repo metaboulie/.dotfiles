@@ -128,3 +128,9 @@ end
 function check -d 'print credential info in cwd'
   command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
 end
+
+## scripts
+# ls fish alias
+function lsalias -d 'ls fish alias'
+  pypy ~/scripts/lsalias.py $argv
+end

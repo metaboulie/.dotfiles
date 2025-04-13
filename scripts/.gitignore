@@ -1,0 +1,4 @@
+*
+!.gitignore
+!lsalias.py
+!ruff.toml
