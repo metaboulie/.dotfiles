@@ -1,4 +1,1 @@
 extend = "~/.config/ruff.toml"
-
-[lint.per-file-ignores]
-"lsalias.py" = ["T201"]

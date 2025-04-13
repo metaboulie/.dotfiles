@@ -1,4 +1,4 @@
 *
 !.gitignore
-!lsalias.py
+!lsalias.odin
 !ruff.toml

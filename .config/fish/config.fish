@@ -6,6 +6,7 @@ fish_add_path $HOME/.ghcup/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/dev/bin
 fish_add_path $HOME/opt/bin
+fish_add_path $HOME/scripts/bin
 
 zoxide init fish | source
 fzf --fish | source
@@ -31,6 +32,8 @@ alias lsss 'eza -R -l -L 2'
 alias lsopt 'eza ~/opt/bin -l --no-permissions --no-user -U --no-filesize'
 # ls bin in dev
 alias lsdev 'eza ~/dev/bin -l --no-permissions --no-user -U --no-filesize'
+# ls bin in scripts
+alias lsscripts 'eza ~/scripts/bin -l --no-permissions --no-user -U --no-filesize'
 
 ## start software
 # btop
@@ -125,10 +128,4 @@ end
 # credential info
 function check -d 'print credential info in cwd'
   command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
-end
-
-## scripts
-# ls fish alias
-function lsalias -d 'ls fish alias'
-  pypy ~/scripts/lsalias.py $argv
 end
