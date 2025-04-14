@@ -1,0 +1,14 @@
+*
+!.gitignore
+!.ghci
+!.gitconfig
+!.config/
+!.config/**
+!.julia/
+!.julia/config/
+!.julia/config/**
+!opt/
+!opt/bin/
+!opt/bin/**
+!scripts/
+!scripts/**

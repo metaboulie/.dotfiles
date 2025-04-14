@@ -17,10 +17,10 @@ set -gx VISUAL nvim
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -gx MANROFFOPT "-c"
 
-set -gx HATCH_CONFIG ~/.config/hatch.toml
+set -gx HATCH_CONFIG ~/.config/python/.hatch.toml
 set -gx TAPLO_CONFIG ~/.config/taplo.toml
 
-###
+### ALIASES 
 ## ls
 # general ls
 alias ls 'eza --all --no-permissions --no-user --header --icons --git --git-ignore --tree --long --git-repos-no-status --binary --total-size'
@@ -91,13 +91,6 @@ alias gc 'git clone --depth=1'
 alias gl 'git log --graph --decorate --oneline | bat --language=gitlog'
 # download github release
 alias ghd "gh release download --clobber --dir ~/opt"
-# initialize .gitignore
-function gi -d 'initialize .gitignore in incremental style'
-    echo '*' > .gitignore
-    echo '!.gitignore' >> .gitignore
-    eza -f | awk '{print "!" $0}' >> .gitignore
-    bat .gitignore
-end
 
 ## python
 # marimo edit
@@ -128,4 +121,24 @@ end
 # credential info
 function check -d 'print credential info in cwd'
   command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
+end
+
+## initilize
+# .gitignore
+function gi -d 'initialize .gitignore in incremental style'
+  echo '*' > .gitignore
+  echo '!.gitignore' >> .gitignore
+  eza -f | awk '{print "!" $0}' >> .gitignore
+  bat .gitignore
+end
+# python
+function pi -d 'initilize a python project' -a name
+  hatch new $name
+  cd $name
+  git init
+  cp ~/.config/python/*.toml ./
+  cp -R ~/.config/.github/* ./.github/
+  gi
+  printf "!.github/\n!.github/**\n!src/\n!src/$name/\n!src/$name/**\n!tests/\n!tests/**" >> .gitignore
+  touch todo.norg
 end
