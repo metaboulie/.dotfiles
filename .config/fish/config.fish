@@ -94,7 +94,9 @@ alias ghd "gh release download --clobber --dir ~/opt"
 
 ## python
 # marimo edit
-alias me 'uv run marimo edit --no-token --sandbox'
+alias me 'uvx marimo edit --no-token --sandbox'
+# marimo run
+alias mr 'uvx marimo run --sandbox'
 # uv dev install
 alias ue 'uv pip install -e .'
 # ruff check

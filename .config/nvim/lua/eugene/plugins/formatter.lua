@@ -14,6 +14,7 @@ return {
 				python = { "ruff" },
 				html = { "prettierd" },
 				css = { "prettierd" },
+				markdown = { "prettierd" },
 			},
 			format_on_save = { lsp_fallback = true, async = false, timeout_ms = 1000 },
 		})
