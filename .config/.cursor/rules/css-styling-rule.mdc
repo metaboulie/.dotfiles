@@ -1,0 +1,55 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Css Styling Rule
+
+When creating stylings for a html file, you should:
+
+- stay minimal, organized, consistent, cool, rational and serious
+- use elegant and mathematical consistent alignents, fontsizes and spacing
+- keep font size small and use compact width instead of medium
+
+For font-family, you should:
+
+- for headings and titles, use "Cormorant Garamond, serif" 
+- for code, use "Fira Code"
+- for body, use "iosevka"
+- for other elements, use different fonts that are in consistent with these fonts
+
+Here is the palette you should use:
+
+```css
+:root {
+    --bg-color: #ffffff;
+    --text-color: #2c3e50;
+    --accent-color: #3498db;
+    --accent-color-dark: #2980b9;
+    --link-color: #2980b9;
+    --border-color: #ecf0f1;
+    --code-bg: #f8f9fa;
+    --callout-bg: #f8f9fa;
+    --callout-border: #e9ecef;
+    --heading-color: #34495e;
+    --list-marker: #3498db;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #ecf0f1;
+    --accent-color: #3498db;
+    --accent-color-dark: #2980b9;
+    --link-color: #3498db;
+    --border-color: #2c3e50;
+    --code-bg: #2c3e50;
+    --callout-bg: #2c3e50;
+    --callout-border: #34495e;
+    --heading-color: #bdc3c7;
+    --list-marker: #3498db;
+}
+```
+
+
+
