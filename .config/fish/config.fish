@@ -56,7 +56,7 @@ alias c 'clear'
 # clean
 alias clean 'brew autoremove; brew cleanup --prune=all'
 # update
-alias u 'brew upgrade; rustup update;'
+alias u 'brew upgrade; rustup update'
 
 ## config
 # open config.fish
