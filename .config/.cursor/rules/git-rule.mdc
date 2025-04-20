@@ -13,11 +13,13 @@ NEVER use other git commands.
 
 Here is the template of commit:
 
-``` <type>[scope]: <description>
+``` 
+<type>[scope]: <description>
 
 [body]
 
-[optional footer(s)] ```
+[optional footer(s)] 
+```
 
 - **Type**: One of `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`,
   `perf`, `ci`, `build`, `revert`.
