@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Git rule
+
+For every answer (modification, iteration, etc.), you should run `git add` on
+files you modified and then run `git commit` with a drafted message to commit
+them.
+
+NEVER use other git commands.
+
+Here is the template of commit:
+
+``` <type>[scope]: <description>
+
+[body]
+
+[optional footer(s)] ```
+
+- **Type**: One of `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`,
+  `perf`, `ci`, `build`, `revert`.
+- **Scope**: Indicates the section of the codebase.
+- **Description**: Short summary, imperative mood, max 50 characters.
+- **Body**: Detailed explanation, wrapped at 72 characters.
+- **Footer**: Metadata such as issue references.
