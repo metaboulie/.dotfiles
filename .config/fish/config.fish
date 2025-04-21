@@ -51,6 +51,8 @@ end
 ## system util
 # clear buffer
 alias c 'clear'
+# clear tmp
+alias ct 'z ; rm -rfd tmp; mkdir tmp'
 
 ## pkg managers
 # clean
@@ -125,7 +127,7 @@ function check -d 'print credential info in cwd'
   command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
 end
 
-## initilize
+## initialize
 # .gitignore
 function gi -d 'initialize .gitignore in incremental style'
   echo '*' > .gitignore
@@ -142,5 +144,15 @@ function pi -d 'initilize a python project' -a name
   cp -R ~/.config/.github/* ./.github/
   gi
   printf "!.github/\n!.github/**\n!src/\n!src/$name/\n!src/$name/**\n!tests/\n!tests/**" >> .gitignore
+  touch todo.norg
+end
+# c
+function ci -d 'initialize a c project' -a name
+  mkdir $name
+  cd $name
+  cp ~/scripts/nob.h ./
+  touch build.c
+  git init
+  gi
   touch todo.norg
 end
