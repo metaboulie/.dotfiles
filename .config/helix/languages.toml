@@ -1,0 +1,16 @@
+[[language]]
+name = "odin"
+scope = "source.odin"
+injection-regex = "odin"
+file-types = ["odin"]
+auto-format = true
+diagnostic-severity = "hint"
+formatter = { command = "odinfmt", args = ["--stdin"] }
+language-servers = ["ols"]
+
+[language-server.ols]
+command = "ols"
+args = ["--stdio"]
+
+[language-server.ols.config]
+provideFormatter = true
