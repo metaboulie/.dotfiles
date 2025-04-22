@@ -1,4 +1,4 @@
-theme = "iceberg-dark"
+theme = 'molokai'
 
 [editor]
 # Show currently open buffers, only when more than one exists.
@@ -11,6 +11,9 @@ line-number = "relative"
 true-color = true
 # Minimum severity to show a diagnostic after the end of a line:
 end-of-line-diagnostics = "hint"
+
+[editor.search]
+smart-case = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -31,7 +34,6 @@ wrap-indicator = "↩ "
 space = "all"
 tab = "all"
 newline = "none"
-
 
 [editor.whitespace.characters]
 space = " "
@@ -79,11 +81,17 @@ space.c = "toggle_comments"
 X = "extend_line_above" # Shift+x to select the whole line above
 D = [
   "extend_to_line_end",
-  "change_selection",
+  "delete_selection",
 ] # Wipe and edit the current line from cursor position
-# c = ["trim_selections", "change_selection"] # Make 'c' automatically strip the selection of extra whitespace
-# a = ["append_mode", "collapse_selection"] # Remove the selection when entering insert mode with 'a'
-"tab" = "goto_next_function"   # Select and jump to the next function via Treesitter
+c = [
+  "trim_selections",
+  "change_selection",
+] # Make 'c' automatically strip the selection of extra whitespace
+a = [
+  "append_mode",
+  "collapse_selection",
+] # Remove the selection when entering insert mode with 'a'
+"tab" = "goto_next_function" # Select and jump to the next function via Treesitter
 "S-tab" = "goto_prev_function" # Select and jump to the previous function via Treesitter 
 
 # Use system clipboard

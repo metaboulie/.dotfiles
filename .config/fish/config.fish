@@ -78,6 +78,10 @@ alias vl 'nvim ~/.local/state/nvim/lsp.log'
 # cd and open neorg
 alias n 'cd ~/metaboulie; nvim todo.norg'
 
+## helix
+# open hx
+alias h 'hxrand; hx'
+
 ## brew
 # info
 alias bi 'brew info'
