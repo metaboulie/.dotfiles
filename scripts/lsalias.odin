@@ -1,3 +1,12 @@
+/*
+Parse and display fish shell aliases and functions.
+
+Options:
+- `-f, --file PATH` : Path to fish config file (relative to HOME)
+- `--format FORMAT` : Display format for aliases (grid or inline)
+- `--compact`       : Don't print empty lines between groups
+- `-h, --help`      : Show help message
+*/
 package main
 
 import "core:fmt"
@@ -51,8 +60,8 @@ add_item :: proc(group: ^AliasGroup, item: AliasItem) {
 }
 
 AliasView :: struct {
-	groups: []AliasGroup,
-	format: ViewFormat,
+	groups:  []AliasGroup,
+	format:  ViewFormat,
 	compact: bool,
 }
 
@@ -290,8 +299,8 @@ main :: proc() {
 
 	// Display the aliases
 	view := AliasView {
-		groups = groups[:],
-		format = format,
+		groups  = groups[:],
+		format  = format,
 		compact = compact,
 	}
 	pprint(view)
