@@ -146,13 +146,3 @@ function pi -d 'initilize a python project' -a name
   printf "!.github/\n!.github/**\n!src/\n!src/$name/\n!src/$name/**\n!tests/\n!tests/**" >> .gitignore
   touch todo.norg
 end
-# c
-function ci -d 'initialize a c project' -a name
-  mkdir $name
-  cd $name
-  cp ~/scripts/nob.h ./
-  touch build.c
-  git init
-  gi
-  touch todo.norg
-end
