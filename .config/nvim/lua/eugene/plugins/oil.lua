@@ -45,10 +45,6 @@ return {
 						return vim.tbl_contains(folder_skip, name)
 					end,
 				},
-				-- Customize the highlight group for the file name
-				highlight_filename = function(entry, is_hidden, is_link_target, is_link_orphan)
-					return nil
-				end,
 			})
 			-- Open parent directory in current window
 			vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

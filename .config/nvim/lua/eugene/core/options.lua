@@ -1,15 +1,10 @@
--- [[ Setting options ]]
--- See `:help vim.opt`
---  For more options, you can see `:help option-list`
-
 vim.cmd("let g:netrw_liststyle = 3")
 vim.g.have_nerd_font = true
 
-local opt = vim.opt -- for conciseness
+local opt = vim.opt
 
--- line numbers
-opt.relativenumber = false -- i think this can strengthen my computation power
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+opt.relativenumber = false
+opt.number = true
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -21,7 +16,7 @@ opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = true
 
 -- search settings
-opt.ignorecase = true -- ignore case when searching
+opt.ignorecase = false -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- cursor line
