@@ -5,17 +5,13 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(
-	{ { import = "eugene.plugins" }, { import = "eugene.plugins.lsp" }, { import = "eugene.plugins.lang" } },
-	{
-		dev = { path = "~/dev/nvim", patterns = {}, fallback = false },
-		checker = { enabled = true, notify = false },
-		change_detection = { notify = false },
-	}
-)
+require("lazy").setup({ { import = "eugene.plugins" }, { import = "eugene.plugins.lsp" } }, {
+	checker = { enabled = true, notify = false },
+	change_detection = { notify = false },
+})

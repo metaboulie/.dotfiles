@@ -8,16 +8,6 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		"folke/todo-comments.nvim",
 	},
-	-- Two important keymaps to use while in Telescope are:
-	--  - Insert mode: <c-/>
-	--  - Normal mode: ?
-	--
-	-- This opens a window that shows you all of the keymaps for the current
-	-- Telescope picker. This is really useful to discover what Telescope can
-	-- do as well as how to actually do it!
-
-	-- [[ Configure Telescope ]]
-	-- See `:help telescope` and `:help telescope.setup()`
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
