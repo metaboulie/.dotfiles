@@ -13,7 +13,7 @@ readfile :: proc(filepath: string) -> string {
 	content, ok := os.read_entire_file(filepath)
 	if !ok {
 		fmt.eprintf("Error reading config file: %s\n", filepath)
-		os.exit(1)
+		os.exit(69)
 	}
 	defer delete(content)
 
@@ -37,13 +37,35 @@ main :: proc() {
 
 	configpath := filepath.join({home, "/.config/helix/config.toml"})
 	defer delete(configpath)
+
 	config := readfile(configpath)
 	defer delete(config)
 
-	themepath := filepath.join({home, "/.config/helix/themes"})
-	defer delete(themepath)
-	themes := strings.split(readfile(themepath), ",")
-	defer delete(themes)
+	themesdir := filepath.join({home, "/.config/helix/themes"})
+
+	f, err := os.open(themesdir)
+	defer os.close(f)
+
+	if err != os.ERROR_NONE {
+		fmt.eprintln("Could not open directory for reading", err)
+		os.exit(2)
+	}
+
+	fis: []os.File_Info
+	defer os.file_info_slice_delete(fis)
+
+	fis, err = os.read_dir(f, -1) // -1 reads all file infos
+	if err != os.ERROR_NONE {
+		fmt.eprintln("Could not read directory", err)
+		os.exit(3)
+	}
+
+	themes := make([dynamic]string)
+
+	for fi in fis {
+		_, name := filepath.split(fi.fullpath)
+		append(&themes, strings.trim_suffix(name, ".toml"))
+	}
 
 	theme := rand.choice(themes[:])
 
