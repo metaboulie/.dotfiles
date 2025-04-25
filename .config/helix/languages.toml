@@ -14,3 +14,8 @@ args = ["--stdio"]
 
 [language-server.ols.config]
 provideFormatter = true
+
+[[language]]
+name = "python"
+auto-format = true
+diagnostic-severity = "hint"

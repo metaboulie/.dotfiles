@@ -1,4 +1,4 @@
-theme = 'poimandres_storm'
+theme = 'dracula_at_night'
 
 [editor]
 # Show currently open buffers, only when more than one exists.

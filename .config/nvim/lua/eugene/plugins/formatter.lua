@@ -9,6 +9,7 @@ return {
 				yaml = { "yamlfmt" },
 				json = { "prettierd" },
 				html = { "prettierd" },
+				toml = { "taplo" },
 			},
 			format_on_save = { lsp_fallback = true, async = false, timeout_ms = 1000 },
 		})

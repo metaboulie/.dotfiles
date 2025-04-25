@@ -99,6 +99,8 @@ alias gl 'git log --graph --decorate --oneline | bat --language=gitlog'
 alias ghd "gh release download --clobber --dir ~/opt"
 
 ## python
+# use pypy as the default python interpreter
+alias python 'pypy'
 # marimo edit
 alias me 'uvx marimo edit --no-token --sandbox'
 # marimo run
