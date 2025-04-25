@@ -19,3 +19,7 @@ provideFormatter = true
 name = "python"
 auto-format = true
 diagnostic-severity = "hint"
+
+[[language]]
+name = "toml"
+auto-format = true

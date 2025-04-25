@@ -1,34 +1,26 @@
-theme = 'dracula_at_night'
+theme = 'spacebones_light'
 
 [editor]
-# Show currently open buffers, only when more than one exists.
-bufferline = "multiple"
-# Highlight all lines with a cursor
-cursorline = false
-# Use relative line numbers
-line-number = "relative"
-# Force the theme to show colors
-true-color = true
-# Minimum severity to show a diagnostic after the end of a line:
-end-of-line-diagnostics = "hint"
+scrolloff = 20                   # Number of lines of padding when scrolling
+mouse = false                    # Enable mouse mode
+bufferline = "multiple"          # Show currently open buffers, only when more than one exists.
+shell = ["fish", "-c"]           # Shell to use when running external commands
+cursorline = true                # Highlight all lines with a cursor
+true-color = true                # Force the theme to show colors
+end-of-line-diagnostics = "hint" # Minimum severity to show a diagnostic after the end of a line:
 
-[editor.search]
-smart-case = false
+[editor.statusline]
+left = ["file-name", "version-control", "selections"]
+right = ["diagnostics", "position-percentage"]
+separator = " "
+
+[editor.lsp]
+display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
-
-[editor.indent-guides]
-render = true
-character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
-skip-levels = 1
-
-[editor.soft-wrap]
-enable = true
-# wrap-at-text-width = true
-wrap-indicator = "↩ "
 
 [editor.whitespace.render]
 space = "all"
@@ -42,33 +34,24 @@ tab = "→"
 newline = "⏎"
 tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
 
-[editor.lsp]
-# Disable automatically popups of signature parameter help
-auto-signature-help = false
-# Show LSP messages in the status line
-display-messages = true
-display-inlay-hints = true
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
 
-[editor.statusline]
-left = ["file-name", "version-control"]
-right = ["diagnostics", "position-percentage"]
-separator = "│"
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+[editor.soft-wrap]
+enable = true
+wrap-indicator = "↩ " # wrap-at-text-width = true
 
 [editor.inline-diagnostics]
-# Minimum severity to show a diagnostic on the primary cursor's line.
-# Note that `cursor-line` diagnostics are hidden in insert mode.
-cursor-line = "error"   # Show inline diagnostics when the cursor is on the line
-other-lines = "disable" # Don't expand diagnostics unless the cursor is on the line
+cursor-line = "hint" # Show inline diagnostics when the cursor is on the line
+other-lines = "hint" # Don't expand diagnostics unless the cursor is on the line
 
 [keys.select]
 X = "select_line_above"
 
 [keys.normal]
 C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
-"C-S-esc" = "extend_line" # Maps Ctrl-Shift-Escape to extend_line
 g = { a = "code_action" } # Maps `ga` to show possible code actions
 "ret" = [
   "open_below",
@@ -77,7 +60,6 @@ g = { a = "code_action" } # Maps `ga` to show possible code actions
 "0" = "extend_to_line_start"
 "C-0" = "extend_to_line_end"
 space.c = "toggle_comments"
-# https://elixirforum.com/t/helix-editor-for-elixir-development/54964/27
 X = "extend_line_above" # Shift+x to select the whole line above
 D = [
   "extend_to_line_end",
@@ -97,9 +79,6 @@ a = [
 # Use system clipboard
 p = "paste_clipboard_before"
 y = "yank_main_selection_to_clipboard"
-
-# https://github.com/helix-editor/helix/discussions/7908
-space.x = ":toggle whitespace.render all none"
 
 # Mark line and move with them up/down
 # https://github.com/helix-editor/helix/discussions/5764#discussioncomment-4840408
