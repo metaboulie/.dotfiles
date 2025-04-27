@@ -16,6 +16,15 @@ args = ["--stdio"]
 provideFormatter = true
 
 [[language]]
+name = "rust"
+auto-format = true
+diagnostic-severity = "hint"
+formatter = { command = "rustfmt" }
+
+[language-server.rust-analyzer]
+config = { cargo = { features = "all" } }
+
+[[language]]
 name = "python"
 auto-format = true
 diagnostic-severity = "hint"
