@@ -1,4 +1,4 @@
-theme = 'spacebones_light'
+theme = 'rasmus'
 
 [editor]
 scrolloff = 20                   # Number of lines of padding when scrolling

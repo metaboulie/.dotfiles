@@ -92,7 +92,7 @@ alias bu 'brew uses --recursive --installed'
 
 ## git
 # clone
-alias gc 'git clone --depth=1'
+alias gc 'git clone --recursive --depth=1 --single-branch'
 # log
 alias gl 'git log --graph --decorate --oneline | bat --language=gitlog'
 # download github release
