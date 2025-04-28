@@ -27,7 +27,7 @@ config = { cargo = { features = "all" } }
 [[language]]
 name = "python"
 auto-format = true
-diagnostic-severity = "hint"
+diagnostic-severity = "error"
 
 [[language]]
 name = "toml"
