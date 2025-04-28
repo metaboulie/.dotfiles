@@ -1,7 +1,7 @@
 # Author: NNB <nnbnh@protonmail.com>
 
-"ui.menu" = { fg = "light-gray", bg = "gray" }
-"ui.menu.selected" = { modifiers = ["reversed"] }
+"ui.menu" = { fg = "black", bg = "gray" }
+"ui.menu.selected" = { fg = "black", bg = "blue" }
 "ui.linenr" = { fg = "light-gray", bg = "black" }
 "ui.popup" = { bg = "black" }
 "ui.window" = { bg = "black" }
@@ -22,7 +22,7 @@
 "attribute" = "yellow"
 "type" = "light-yellow"
 "ui.cursor.match" = { fg = "light-yellow", modifiers = ["underlined"] }
-"string"  = "light-green"
+"string" = "light-green"
 "variable.other.member" = "light-green"
 "constant.character.escape" = "light-cyan"
 "function" = "light-blue"
