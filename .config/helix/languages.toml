@@ -1,4 +1,10 @@
 [[language]]
+name = "haskell"
+auto-format = true
+diagnostic-severity = "hint"
+formatter = { command = "fourmolu" }
+
+[[language]]
 name = "odin"
 scope = "source.odin"
 injection-regex = "odin"

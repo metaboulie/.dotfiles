@@ -37,7 +37,7 @@ alias lsscripts 'eza ~/scripts/bin -l --no-permissions --no-user -U --no-filesiz
 
 ## start software
 # btop
-alias bt "btop -t -lc"
+alias bt "btop -t -l -p 0"
 # yazi
 function y -d 'open yazi'
   set tmp (mktemp -t "yazi-cwd.XXXXXX")
