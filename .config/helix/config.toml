@@ -1,4 +1,4 @@
-theme = 'rasmus'
+theme = 'modus_operandi_tritanopia'
 
 [editor]
 scrolloff = 20                   # Number of lines of padding when scrolling

@@ -24,6 +24,7 @@ formulae = [
   "yazi",
   "zoxide",
 ]
+
 casks = [
   "antinote",
   "font-iosevka-nerd-font",
