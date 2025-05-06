@@ -9,4 +9,6 @@ function git_daily_update
     z -
 end
 
-git_daily_update deepBoredom
+git_daily_update ~/deepBoredom
+git_daily_update ~/metaboulie
+git_daily_update ~
