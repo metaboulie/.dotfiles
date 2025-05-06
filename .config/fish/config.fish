@@ -152,3 +152,9 @@ function pi -d 'initilize a python project' -a name
   printf "!.github/\n!.github/**\n!src/\n!src/$name/\n!src/$name/**\n!tests/\n!tests/**" >> .gitignore
   touch todo.norg
 end
+
+## automation
+# daily git sync
+function sync -d 'daily sync with remote git repo'
+  fish ~/scripts/fish/gcday.fish
+end
