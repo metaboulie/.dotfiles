@@ -6,7 +6,6 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		{ "nvim-telescope/telescope-ui-select.nvim" },
 		"nvim-tree/nvim-web-devicons",
-		"folke/todo-comments.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -14,15 +13,7 @@ return {
 		local builtin = require("telescope.builtin")
 
 		telescope.setup({
-			defaults = {
-				path_display = { "smart" },
-				mappings = {
-					i = {
-						["<C-k>"] = actions.move_selection_previous, -- move to prev result
-						["<C-j>"] = actions.move_selection_next, -- move to next result
-					},
-				},
-			},
+			defaults = { path_display = { "smart" } },
 			extensions = {
 				["ui-select"] = {
 					require("telescope.themes").get_dropdown(),
@@ -33,13 +24,12 @@ return {
 		telescope.load_extension("fzf")
 		telescope.load_extension("ui-select")
 
-		-- set keymaps
-		local keymap = vim.keymap -- for conciseness
+		local keymap = vim.keymap
 
 		keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Fuzzy find files in cwd" })
 		keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Fuzzy find keymaps" })
-		keymap.set("n", "<leader>fsd", builtin.live_grep, { desc = "Telescope live grep" })
+		keymap.set("n", "<leader>fb", builtin.current_buffer_fuzzy_find, { desc = "Current Buffer Fuzzy Find" })
+		keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Telescope live grep" })
 		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Search help tags" })
-		keymap.set("n", "<leader>fsb", builtin.current_buffer_fuzzy_find, { desc = "Current Buffer Fuzzy Find" })
 	end,
 }

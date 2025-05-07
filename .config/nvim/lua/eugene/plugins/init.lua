@@ -23,7 +23,6 @@ return {
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	},
-	"nvim-lua/plenary.nvim",
 	{
 		"echasnovski/mini.nvim",
 		version = "*",
