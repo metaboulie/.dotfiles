@@ -78,7 +78,7 @@ alias n 'cd ~/metaboulie; nvim todo.norg'
 
 ## helix
 # open hx
-alias h 'hxrand; hx'
+alias h 'helix; hx'
 
 ## brew
 # info
