@@ -12,6 +12,7 @@ formulae = [
   "ghcup",
   "helix",
   "hgrep",
+  "just",
   "neovim",
   "odin",
   "raylib",
