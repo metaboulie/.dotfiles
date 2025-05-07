@@ -73,8 +73,6 @@ alias nc 'cd ~/.config; nvim .'
 ## nvim
 # open nvim
 alias v 'nvim'
-# open lsp log
-alias vl 'nvim ~/.local/state/nvim/lsp.log'
 # cd and open neorg
 alias n 'cd ~/metaboulie; nvim todo.norg'
 
