@@ -1,0 +1,9 @@
+default:
+  @just --list
+
+build:
+  @echo start building…
+  @echo building helix...
+  odin build helix/ -o:speed -out:bin/helix
+  @echo building ls...
+  odin build ls/ -o:speed -out:bin/lsalias
