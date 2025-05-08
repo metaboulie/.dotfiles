@@ -15,7 +15,7 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim
 
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -gx MANROFFOPT "-c"
+set -gx MANROFFOPT -c
 
 set -gx HATCH_CONFIG ~/.config/python/.hatch.toml
 set -gx TAPLO_CONFIG ~/.config/taplo.toml
@@ -25,7 +25,7 @@ set -gx TAPLO_CONFIG ~/.config/taplo.toml
 # general ls
 alias ls 'eza --all --no-permissions --no-user --header --icons --git --git-ignore --tree --long --git-repos-no-status --binary --total-size'
 # ls cwd
-alias lss 'eza'
+alias lss eza
 # ls recursively
 alias lsss 'eza -R -l -L 2'
 # ls bin in opt
@@ -40,17 +40,17 @@ alias lsscripts 'eza ~/scripts/bin -l --no-permissions --no-user -U --no-filesiz
 alias bt "btop -t -l -p 0"
 # yazi
 function y -d 'open yazi'
-  set tmp (mktemp -t "yazi-cwd.XXXXXX")
-  yazi $argv --cwd-file="$tmp"
-  if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-    builtin cd -- "$cwd"
-  end
-  rm -f -- "$tmp"
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
 end
 
 ## system util
 # clear buffer
-alias c 'clear'
+alias c clear
 # clear tmp
 alias ct 'z ; rm -rfd tmp; mkdir tmp'
 
@@ -72,7 +72,7 @@ alias nc 'cd ~/.config; nvim .'
 
 ## nvim
 # open nvim
-alias v 'nvim'
+alias v nvim
 # cd and open neorg
 alias n 'cd ~/metaboulie; nvim todo.norg'
 
@@ -98,7 +98,7 @@ alias ghd "gh release download --clobber --dir ~/opt"
 
 ## python
 # use pypy as the default python interpreter
-alias python 'pypy'
+alias python pypy
 # marimo edit
 alias me 'uvx marimo edit --no-token --sandbox'
 # marimo run
@@ -115,44 +115,47 @@ alias r 'ruff format; ruff check'
 ## search
 # regex search
 function hg -d 'prettier regex search'
-  command hgrep --no-grid --printer bat -S "$argv" 
+    command hgrep --no-grid --printer bat -S "$argv"
 end
 
 ## pretty print
 # help message
 function help -d 'print help message'
-  # Execute command in a new fish process to ensure fish builtins work correctly
-  # fish -c evaluates the following string as fish code in a new process
-  command fish -c "$argv --help" 2>&1 | bat -l help -p
-  or command fish -c "$argv -h" 2>&1 | bat -l help -p
+    # Execute command in a new fish process to ensure fish builtins work correctly
+    # fish -c evaluates the following string as fish code in a new process
+    command fish -c "$argv --help" 2>&1 | bat -l help -p
+    or command fish -c "$argv -h" 2>&1 | bat -l help -p
 end
 # credential info
 function check -d 'print credential info in cwd'
-  command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
+    command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
 end
 
 ## initialize
 # .gitignore
 function gi -d 'initialize .gitignore in incremental style'
-  echo '*' > .gitignore
-  echo '!.gitignore' >> .gitignore
-  eza -f | awk '{print "!" $0}' >> .gitignore
-  bat .gitignore
+    echo '*' >.gitignore
+    echo '!.gitignore' >>.gitignore
+    eza -f | awk '{print "!" $0}' >>.gitignore
+    bat .gitignore
 end
 # python
 function pi -d 'initilize a python project' -a name
-  hatch new $name
-  cd $name
-  git init
-  cp ~/.config/python/*.toml ./
-  cp -R ~/.config/.github/* ./.github/
-  gi
-  printf "!.github/\n!.github/**\n!src/\n!src/$name/\n!src/$name/**\n!tests/\n!tests/**" >> .gitignore
-  touch todo.norg
+    hatch new $name
+    cd $name
+    git init
+    cp ~/.config/python/*.toml ./
+    cp -R ~/.config/.github/* ./.github/
+    gi
+    printf "!.github/\n!.github/**\n!src/\n!src/$name/\n!src/$name/**\n!tests/\n!tests/**" >>.gitignore
+    touch todo.norg
 end
 
 ## automation
 # daily git sync
 function sync -d 'daily sync with remote git repo'
-  fish ~/scripts/fish/gcday.fish
+    fish ~/scripts/fish/gcday.fish
 end
+
+## just
+alias j 'just -g'
