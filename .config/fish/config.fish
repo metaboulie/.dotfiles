@@ -156,6 +156,3 @@ end
 function sync -d 'daily sync with remote git repo'
     fish ~/scripts/fish/gcday.fish
 end
-
-## just
-alias j 'just -g'
