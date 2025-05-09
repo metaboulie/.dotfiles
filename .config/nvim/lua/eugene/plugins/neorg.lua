@@ -17,7 +17,7 @@ return {
 					["core.dirman"] = {
 						config = {
 							workspaces = {
-                home = "~/metaboulie"
+								home = "~/metaboulie",
 								dev = "~/deepBoredom",
 							},
 							default_workspace = "home",
