@@ -17,10 +17,10 @@ return {
 					["core.dirman"] = {
 						config = {
 							workspaces = {
-								journal = "~/metaboulie",
+                home = "~/metaboulie"
 								dev = "~/deepBoredom",
 							},
-							default_workspace = "journal",
+							default_workspace = "home",
 							open_last_workspace = false,
 						},
 					},
@@ -30,9 +30,6 @@ return {
 			vim.wo.foldlevel = 99
 			vim.wo.conceallevel = 2
 			local keymap = vim.keymap
-			keymap.set("n", "<leader>njt", ":Neorg journal today<CR>", {
-				desc = "Open journal for today",
-			})
 			vim.api.nvim_create_autocmd("Filetype", {
 				pattern = "norg",
 				callback = function()

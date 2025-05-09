@@ -1,4 +1,4 @@
-theme = 'dark_high_contrast'
+theme = 'snazzy'
 
 [editor]
 scrolloff = 20                   # Number of lines of padding when scrolling
