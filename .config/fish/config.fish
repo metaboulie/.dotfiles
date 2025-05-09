@@ -74,7 +74,7 @@ alias nc 'cd ~/.config; nvim .'
 # open nvim
 alias v nvim
 # cd and open neorg
-alias n 'cd ~/metaboulie; nvim todo.norg'
+alias n "cd ~/metaboulie; nvim tracking/$(date '+%Y')/$(date '+%m').norg"
 
 ## helix
 # open hx
