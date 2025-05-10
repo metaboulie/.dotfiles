@@ -3,7 +3,9 @@
 
 function git_daily_update
     z $argv[1]
-    git add . && git commit -m "update: $(date "+%d/%m/%y")" && git push
+    git add .
+    git commit -m "update: $(date "+%d/%m/%y")"
+    git push
     z -
 end
 
