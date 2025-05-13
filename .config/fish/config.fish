@@ -8,8 +8,8 @@ fish_add_path $HOME/dev/bin
 fish_add_path $HOME/opt/bin
 fish_add_path $HOME/scripts/bin
 
-zoxide init fish | source
-fzf --fish | source
+set -U fish_greeting
+set -g fish_key_bindings fish_vi_key_bindings
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
@@ -19,6 +19,9 @@ set -gx MANROFFOPT -c
 
 set -gx HATCH_CONFIG ~/.config/python/.hatch.toml
 set -gx TAPLO_CONFIG ~/.config/taplo.toml
+
+zoxide init fish | source
+fzf --fish | source
 
 ### ALIASES 
 ## ls
@@ -93,12 +96,12 @@ alias bu 'brew uses --recursive --installed'
 alias gc 'git clone --recursive --depth=1 --single-branch'
 # log
 alias gl 'git log --graph --decorate --oneline | bat --language=gitlog'
-# download github release
-alias ghd "gh release download --clobber --dir ~/opt"
 
 ## python
 # use pypy as the default python interpreter
 alias python pypy
+# pypy shortcut
+alias py pypy
 # marimo edit
 alias me 'uvx marimo edit --no-token --sandbox'
 # marimo run
