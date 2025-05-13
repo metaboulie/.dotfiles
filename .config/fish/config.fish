@@ -8,7 +8,7 @@ fish_add_path $HOME/dev/bin
 fish_add_path $HOME/opt/bin
 fish_add_path $HOME/scripts/bin
 
-set -U fish_greeting
+set -U fish_greeting "( ._.)"
 set -g fish_key_bindings fish_vi_key_bindings
 
 set -gx EDITOR nvim
@@ -31,12 +31,6 @@ alias ls 'eza --all --no-permissions --no-user --header --icons --git --git-igno
 alias lss eza
 # ls recursively
 alias lsss 'eza -R -l -L 2'
-# ls bin in opt
-alias lsopt 'eza ~/opt/bin -l --no-permissions --no-user -U --no-filesize'
-# ls bin in dev
-alias lsdev 'eza ~/dev/bin -l --no-permissions --no-user -U --no-filesize'
-# ls bin in scripts
-alias lsscripts 'eza ~/scripts/bin -l --no-permissions --no-user -U --no-filesize'
 
 ## start software
 # btop
@@ -98,10 +92,8 @@ alias gc 'git clone --recursive --depth=1 --single-branch'
 alias gl 'git log --graph --decorate --oneline | bat --language=gitlog'
 
 ## python
-# use pypy as the default python interpreter
-alias python pypy
-# pypy shortcut
-alias py pypy
+# pypy
+alias py "pypy"
 # marimo edit
 alias me 'uvx marimo edit --no-token --sandbox'
 # marimo run

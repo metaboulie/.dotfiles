@@ -2,6 +2,7 @@
 !.gitignore
 !.ghci
 !.gitconfig
+!.hushlogin
 !.config/
 !.config/**
 !opt/

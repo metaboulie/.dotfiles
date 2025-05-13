@@ -1,4 +1,4 @@
-theme = 'yo_berry'
+theme = 'material_oceanic'
 
 [editor]
 scrolloff = 20                   # Number of lines of padding when scrolling
