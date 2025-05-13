@@ -1,4 +1,5 @@
 return {
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 },
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
