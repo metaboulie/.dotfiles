@@ -121,10 +121,6 @@ function help -d 'print help message'
     command fish -c "$argv --help" 2>&1 | bat -l help -p
     or command fish -c "$argv -h" 2>&1 | bat -l help -p
 end
-# credential info
-function check -d 'print credential info in cwd'
-    command hgrep --no-grid --printer bat -S "(access_token|password|api_key)" | less -R
-end
 
 ## initialize
 # .gitignore
@@ -133,15 +129,4 @@ function gi -d 'initialize .gitignore in incremental style'
     echo '!.gitignore' >>.gitignore
     eza -f | awk '{print "!" $0}' >>.gitignore
     bat .gitignore
-end
-# python
-function pi -d 'initilize a python project' -a name
-    hatch new $name
-    cd $name
-    git init
-    cp ~/.config/python/*.toml ./
-    cp -R ~/.config/.github/* ./.github/
-    gi
-    printf "!.github/\n!.github/**\n!src/\n!src/$name/\n!src/$name/**\n!tests/\n!tests/**" >>.gitignore
-    touch todo.norg
 end

@@ -2,9 +2,9 @@
 # ls bins
 
 function lsbin
+    echo "ls bins in $argv[1]"
     eza $argv[1] -l --no-permissions --no-user -U --no-filesize
 end
 
 lsbin ~/opt/bin
-lsbin ~/dev/bin
 lsbin ~/scripts/bin
