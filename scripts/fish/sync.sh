@@ -3,9 +3,11 @@
 
 function git_daily_update
     z $argv[1]; or exit
+    echo "syncing $argv[1]"
     git add .
     git commit -m "update: $(date "+%d/%m/%y")"
     git push; or exit
+    echo "syncing finished"
     z -
 end
 
