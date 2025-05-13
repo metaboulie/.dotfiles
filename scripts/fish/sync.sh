@@ -7,7 +7,7 @@ function git_sync
     echo "syncing $argv[1]"
     set_color normal
     git add .
-    git commit -m "update: $(date "+%d/%m/%y")"
+    git commit -m "update: $(date "+%d/%m/%y")" > /dev/null 2>&1
     git push  > /dev/null 2>&1 ; or exit
     set_color bryellow 
     echo "syncing finished"
