@@ -8,7 +8,7 @@ function git_sync
     set_color normal
     git add .
     git commit -m "update: $(date "+%d/%m/%y")"
-    git push; or exit
+    git push  > /dev/null 2>&1 ; or exit
     set_color bryellow 
     echo "syncing finished"
     z -
