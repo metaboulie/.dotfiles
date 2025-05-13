@@ -1,8 +1,6 @@
 #!/opt/homebrew/bin/fish
 # automatically z to different workspaces, commit and push daily updates
 
-set -l fish_trace 1
-
 function git_daily_update
     z $argv[1]; or exit
     git add .
