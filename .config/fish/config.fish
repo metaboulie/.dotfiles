@@ -8,7 +8,7 @@ fish_add_path $HOME/dev/bin
 fish_add_path $HOME/opt/bin
 fish_add_path $HOME/scripts/bin
 
-set -U fish_greeting "( ._.)"
+set -U fish_greeting
 set -g fish_key_bindings fish_vi_key_bindings
 
 set -gx EDITOR nvim
