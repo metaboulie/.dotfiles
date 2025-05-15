@@ -15,8 +15,6 @@ keymap.set("n", "<leader>w+", "5<C-w>+", { desc = "Increase window height" })
 keymap.set("n", "<leader>w<", "5<C-w><", { desc = "Decrease window width" })
 keymap.set("n", "<leader>w>", "5<C-w>>", { desc = "Increase window width" })
 
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-
 keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to window below" })
 keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to window above" })
